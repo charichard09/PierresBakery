@@ -4,10 +4,15 @@ namespace PierresBakery.Models
 {
   public class Cart
   {
-    public static List<StoreItem> CurrentCart { get; set; }
+    private static List<StoreItem> _currentCart = new List<StoreItem> {};
     public static void AddItem(StoreItem item)
     {
-      CurrentCart.Add(item);
+      _currentCart.Add(item);
+    }
+
+    public static List<StoreItem> GetCurrentCart()
+    {
+      return _currentCart;
     }
   }
 }
