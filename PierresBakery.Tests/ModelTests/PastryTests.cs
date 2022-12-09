@@ -19,5 +19,18 @@ namespace PierresBakery.ModelTests
       // Assert
       Assert.AreEqual(1, testPastry.Quantity);
     }
+
+    [TestMethod]
+    public void setCost_OnInstatiationTotalCart_Int()
+    {
+      // Arrange
+      int userInput = Convert.ToInt32("6");
+
+      // Act
+      Pastry testPastry = new Pastry(userInput);
+
+      //Assert
+      Assert.AreEqual(10, testPastry.Cost);
+    }
   }
 }

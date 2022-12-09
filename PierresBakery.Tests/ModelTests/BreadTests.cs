@@ -21,7 +21,7 @@ namespace PierresBakery.ModelTests
     }
 
     [TestMethod]
-    public void totalBreadCart_OnInstatiationTotalCart_Int()
+    public void setCost_OnInstatiationTotalCart_Int()
     {
       // Arrange
       int userInput = Convert.ToInt32("6");
