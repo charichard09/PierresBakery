@@ -24,43 +24,52 @@ namespace PierresBakery
         string breadOrPastry = Console.ReadLine();
         if (!Regex.IsMatch(breadOrPastry, @"bread", RegexOptions.IgnoreCase) && !Regex.IsMatch(breadOrPastry, @"pastry", RegexOptions.IgnoreCase))
         {
-          Console.WriteLine(Regex.IsMatch(breadOrPastry, @"bread", RegexOptions.IgnoreCase));
-          Console.WriteLine(breadOrPastry);
+          Console.WriteLine($"We are sorry, we do not provide {breadOrPastry} here. Please enter 'bread' or 'pastry'.");
           continue;
         }
 
         Console.Write($"How much {breadOrPastry} would you like to add: ");
-        int quantity = 0;
-        try
+        string quantityString = Console.ReadLine();
+        int quantityNum = 0;
+        if (Regex.IsMatch(quantityString, @"\d+"))
         {
-          quantity = Convert.ToInt32(Console.ReadLine());
+          quantityNum = Convert.ToInt32(quantityString);
         }
-        catch (FormatException e)
+        else
         {
-          Console.WriteLine($"\n   {e}: Please input a whole number quantity");
+          Console.WriteLine($"{quantityString} is not a valid number. Please input a whole number quantity");
+          continue;
         }
         
         if (breadOrPastry.ToUpper() == "PASTRY")
         {
-          Pastry pastry = new Pastry(quantity);
+          Pastry pastry = new Pastry(quantityNum);
           Cart.AddItem(pastry);
         }
         else if (breadOrPastry.ToUpper() == "BREAD")
         {
-          Bread bread = new Bread(quantity);
+          Bread bread = new Bread(quantityNum);
           Cart.AddItem(bread);
-        }
-        else 
-        {
-          Console.WriteLine("We are sorry, we do not provide that option here.");
         }
         
         Console.WriteLine("Would you like to add another item? (yes/no)");
         addAnother = Console.ReadLine().ToLower();
       }
 
-
-      Console.Write($"\nCart Total: {Cart.CurrentTotal()}\n");
+      Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
+      Console.WriteLine("Cart:");
+      foreach (StoreItem item in Cart.GetCurrentCart())
+      {
+        if (item.GetType() == typeof(Bread))
+        {
+          Console.WriteLine($"{item.Quantity} Bread @ ${item.Cost}");
+        } 
+        else 
+        {
+          Console.WriteLine($"{item.Quantity} Pastry @ ${item.Cost}");
+        }
+      }
+      Console.Write($"Cart Total: {Cart.CurrentTotal()}\n");
       Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
     }
   }
