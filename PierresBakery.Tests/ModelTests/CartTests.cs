@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierresBakery.Models;
 using System;
+using System.Collections.Generic;
 
 namespace PierresBakery.ModelTests
 {
@@ -43,6 +44,12 @@ namespace PierresBakery.ModelTests
       {
         Assert.AreEqual(typeof(Pastry), item.GetType());
       }
+    }
+
+    [TestMethod]
+    public void GetCurrentCart_WillTestForEmptyCart_List()
+    {
+      CollectionAssert.AreEqual(new List<StoreItem> {}, Cart.GetCurrentCart());
     }
   }
 }
