@@ -1,12 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierresBakery.Models;
-using System.Collections.Generic;
+using System;
 
 namespace PierresBakery.ModelTests
 {
   [TestClass]
-  public class CartTests
+  public class CartTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Cart.ClearAll();
+    }
+
     [TestMethod]
     public void AddItem_WillTakeBreadAndStore_Bread()
     {
