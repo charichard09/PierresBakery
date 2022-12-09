@@ -69,7 +69,7 @@ namespace PierresBakery
           Console.WriteLine($"{item.Quantity} Pastry @ ${item.Cost}");
         }
       }
-      Console.Write($"Cart Total: {Cart.CurrentTotal()}\n");
+      Console.Write($"Cart Total: ${Cart.CurrentTotal()}\n");
       Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
     }
   }
