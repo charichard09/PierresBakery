@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierresBakery.Models;
+using System;
 
 namespace PierresBakery.ModelTests
 {
@@ -7,10 +8,16 @@ namespace PierresBakery.ModelTests
   public class PastryTests
   {
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void None_AddOneToQuantity_IntOne()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      // Arrange
+      string userInput = "1";
+
+      // Act
+      Pastry testPastry = new Pastry(userInput);
+
+      // Assert
+      Assert.AreEqual(1, testPastry.Quantity);
     }
   }
 }

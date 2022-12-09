@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierresBakery.Models;
+using System;
 
 namespace PierresBakery.ModelTests
 {
@@ -13,7 +14,7 @@ namespace PierresBakery.ModelTests
       string userInput = "1";
 
       // Act
-      Bread testBread = new Bread(userInput);
+      Bread testBread = new Bread(Convert.ToInt32(userInput));
 
       // Assert
       Assert.AreEqual(1, testBread.Quantity);

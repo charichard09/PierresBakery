@@ -13,8 +13,13 @@ namespace PierresBakery.Models
       }
       set
       {
-        _quantity = Convert.ToInt32(value);
+        _quantity = value;
       }
+    }
+
+    public Cart(int quantInput)
+    {
+      _quantity = quantInput;
     }
   }
 }
