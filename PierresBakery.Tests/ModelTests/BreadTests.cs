@@ -6,12 +6,17 @@ namespace PierresBakery.ModelTests
   [TestClass]
   public class BreadTests
   {
-    // Test methods go here
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void None_AddOneToQuantity_IntOne()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      // Arrange
+      string userInput = "1";
+
+      // Act
+      Bread testBread = new Bread(userInput);
+
+      // Assert
+      Assert.AreEqual(1, testBread.Quantity);
     }
   }
 }

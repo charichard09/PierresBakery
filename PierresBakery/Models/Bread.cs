@@ -1,7 +1,7 @@
 namespace PierresBakery.Models
 {
-  public class Bread
+  public class Bread : Cart
   {
-    // properties, constructors, methods, etc. go here
+    
   }
 }
