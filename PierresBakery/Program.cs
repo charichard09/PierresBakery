@@ -14,37 +14,46 @@ namespace PierresBakery
       Console.WriteLine("| Bread: A single loaf costs $5                        | Pastry: A single pastry for $2                     |");
       Console.WriteLine("| Buy 2, get 1 free (every 3rd loaf of bread is free.) | Buy 3 get $1 off (every 3rd pastry we take $1 off) |");
       Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
-      Console.Write("Would you like to add to cart Bread or Pastry today: ");
-      string breadOrPastry = Console.ReadLine();
-      Console.Write($"How much {breadOrPastry} would you like to add: ");
-      int quantity = 0;
-      try
+
+      string addAnother = "yes";
+
+      while (addAnother == "yes" || addAnother == "y")
       {
-        quantity = Convert.ToInt32(Console.ReadLine());
-      }
-      catch (FormatException e)
-      {
-        Console.WriteLine($"\n   {e}: Please input a whole number quantity");
-        return;
-      }
-      
-      int totalCost = 0; 
-      if (breadOrPastry.ToUpper() == "PASTRY")
-      {
-        Pastry pastry = new Pastry(quantity);
-        totalCost += pastry.Cost;
-      }
-      else if (breadOrPastry.ToUpper() == "BREAD")
-      {
-        Bread bread = new Bread(quantity);
-        totalCost += bread.Cost;
-      }
-      else 
-      {
-        Console.WriteLine("We are sorry, we do not provide that option here.");
+        Console.Write("Would you like to add to cart Bread or Pastry today: ");
+        string breadOrPastry = Console.ReadLine();
+        Console.Write($"How much {breadOrPastry} would you like to add: ");
+        int quantity = 0;
+        try
+        {
+          quantity = Convert.ToInt32(Console.ReadLine());
+        }
+        catch (FormatException e)
+        {
+          Console.WriteLine($"\n   {e}: Please input a whole number quantity");
+          return;
+        }
+        
+        if (breadOrPastry.ToUpper() == "PASTRY")
+        {
+          Pastry pastry = new Pastry(quantity);
+          Cart.AddItem(pastry);
+        }
+        else if (breadOrPastry.ToUpper() == "BREAD")
+        {
+          Bread bread = new Bread(quantity);
+          Cart.AddItem(bread);
+        }
+        else 
+        {
+          Console.WriteLine("We are sorry, we do not provide that option here.");
+        }
+        
+        Console.WriteLine("Would you like to add another item? (yes/no)");
+        addAnother = Console.ReadLine().ToLower();
       }
 
-      Console.Write($"\nCart Total: {totalCost}\n");
+
+      Console.Write($"\nCart Total: {Cart.CurrentTotal()}\n");
       Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
     }
   }

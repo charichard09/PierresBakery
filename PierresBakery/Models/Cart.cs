@@ -17,7 +17,13 @@ namespace PierresBakery.Models
 
     public static int CurrentTotal()
     {
-      return 0;
+      int total = 0;
+
+      foreach (StoreItem item in _currentCart)
+      {
+        total += item.Cost;
+      }
+      return total;
     }
 
     public static void ClearAll()
