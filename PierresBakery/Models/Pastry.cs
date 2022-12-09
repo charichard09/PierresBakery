@@ -6,5 +6,10 @@ namespace PierresBakery.Models
     {
 
     }
+
+    public override int setCost(int quantNum)
+    {
+      return Cost;
+    }
   }
 }

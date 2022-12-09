@@ -11,13 +11,26 @@ namespace PierresBakery.ModelTests
     public void None_AddOneToQuantity_IntOne()
     {
       // Arrange
-      string userInput = "1";
+      int userInput = Convert.ToInt32("1");
 
       // Act
-      Bread testBread = new Bread(Convert.ToInt32(userInput));
+      Bread testBread = new Bread(userInput);
 
       // Assert
       Assert.AreEqual(1, testBread.Quantity);
+    }
+
+    [TestMethod]
+    public void totalBreadCart_OnInstatiationTotalCart_Int()
+    {
+      // Arrange
+      int userInput = Convert.ToInt32("6");
+
+      // Act
+      Bread testBread = new Bread(userInput);
+
+      //Assert
+      Assert.AreEqual(20, testBread.Cost);
     }
   }
 }

@@ -4,22 +4,15 @@ namespace PierresBakery.Models
 {
   public abstract class Cart
   {
-    private int _quantity;
-    public int Quantity
-    {
-      get
-      {
-        return _quantity;
-      }
-      set
-      {
-        _quantity = value;
-      }
-    }
+    public int Cost { get; set; }
+    public int Quantity { get; set; }
 
     public Cart(int quantInput)
     {
-      _quantity = quantInput;
+      Quantity = quantInput;
+      Cost = setCost(quantInput);
     }
+
+    public abstract int setCost(int quantNum);
   }
 }
