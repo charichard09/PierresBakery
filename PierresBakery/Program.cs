@@ -22,9 +22,10 @@ namespace PierresBakery
       {
         quantity = Convert.ToInt32(Console.ReadLine());
       }
-      catch (Exception e)
+      catch (FormatException e)
       {
-        Console.WriteLine($"   {e}: Please input a whole number quantity");
+        Console.WriteLine($"\n   {e}: Please input a whole number quantity");
+        return;
       }
       
 
