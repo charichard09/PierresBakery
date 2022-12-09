@@ -1,5 +1,6 @@
 using System;
 using PierresBakery.Models;
+using System.Text.RegularExpressions;
 
 namespace PierresBakery
 {
@@ -21,6 +22,13 @@ namespace PierresBakery
       {
         Console.Write("Would you like to add to cart Bread or Pastry today: ");
         string breadOrPastry = Console.ReadLine();
+        if (!Regex.IsMatch(breadOrPastry, @"bread", RegexOptions.IgnoreCase) && !Regex.IsMatch(breadOrPastry, @"pastry", RegexOptions.IgnoreCase))
+        {
+          Console.WriteLine(Regex.IsMatch(breadOrPastry, @"bread", RegexOptions.IgnoreCase));
+          Console.WriteLine(breadOrPastry);
+          continue;
+        }
+
         Console.Write($"How much {breadOrPastry} would you like to add: ");
         int quantity = 0;
         try
@@ -30,7 +38,6 @@ namespace PierresBakery
         catch (FormatException e)
         {
           Console.WriteLine($"\n   {e}: Please input a whole number quantity");
-          return;
         }
         
         if (breadOrPastry.ToUpper() == "PASTRY")
