@@ -14,7 +14,7 @@ namespace PierresBakery.ModelTests
       string userInput = "1";
 
       // Act
-      Pastry testPastry = new Pastry(userInput);
+      Pastry testPastry = new Pastry(Convert.ToInt32(userInput));
 
       // Assert
       Assert.AreEqual(1, testPastry.Quantity);
