@@ -51,5 +51,17 @@ namespace PierresBakery.ModelTests
     {
       CollectionAssert.AreEqual(new List<StoreItem> {}, Cart.GetCurrentCart());
     }
+
+    [TestMethod]
+    public void CurrentTotal_TotalEverythingInCurrentCart_Int()
+    {
+      Bread testBread = new Bread(6);
+      Pastry testPastry = new Pastry(6);
+
+      Cart.AddItem(testBread);
+      Cart.AddItem(testPastry);
+
+      Assert.AreEqual(30, Cart.CurrentTotal());
+    }
   }
 }

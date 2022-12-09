@@ -15,6 +15,11 @@ namespace PierresBakery.Models
       return _currentCart;
     }
 
+    public static int CurrentTotal()
+    {
+      return 0;
+    }
+
     public static void ClearAll()
     {
       _currentCart.Clear();
