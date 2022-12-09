@@ -1,18 +1,13 @@
-using System;
+using System.Collections.Generic;
 
 namespace PierresBakery.Models
 {
-  public abstract class Cart
+  public class Cart
   {
-    public int Cost { get; set; }
-    public int Quantity { get; set; }
-
-    public Cart(int quantInput)
+    public static List<StoreItem> CurrentCart { get; set; }
+    public static void AddItem(StoreItem item)
     {
-      Quantity = quantInput;
-      Cost = setCost(quantInput);
+      CurrentCart.Add(item);
     }
-
-    public abstract int setCost(int quantNum);
   }
 }

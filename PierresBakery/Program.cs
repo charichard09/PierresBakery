@@ -28,7 +28,6 @@ namespace PierresBakery
         return;
       }
       
-
       int totalCost = 0; 
       if (breadOrPastry.ToUpper() == "PASTRY")
       {

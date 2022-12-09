@@ -1,6 +1,6 @@
 namespace PierresBakery.Models
 {
-  public class Bread : Cart
+  public class Bread : StoreItem
   {
       public Bread(int quantInput) : base(quantInput)
       {
