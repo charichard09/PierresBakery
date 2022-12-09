@@ -1,6 +1,6 @@
 namespace PierresBakery.Models
 {
-  public class Pastry
+  abstract class Cart
   {
     // properties, constructors, methods, etc. go here
   }

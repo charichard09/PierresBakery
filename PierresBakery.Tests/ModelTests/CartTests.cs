@@ -4,8 +4,9 @@ using PierresBakery.Models;
 namespace PierresBakery.ModelTests
 {
   [TestClass]
-  public class PastryTests
+  public class CartTests
   {
+    // Test methods go here
     [TestMethod]
     public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
     {

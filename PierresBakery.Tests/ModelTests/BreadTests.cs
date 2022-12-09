@@ -1,10 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName;
+using PierresBakery.Models;
 
-namespace ProjectName.Tests
+namespace PierresBakery.ModelTests
 {
   [TestClass]
-  public class ClassNameTests
+  public class BreadTests
   {
     // Test methods go here
     [TestMethod]
