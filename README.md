@@ -20,16 +20,12 @@ _If the user is done adding items to the cart, the program will display their ca
 * _Install .Net 6 SDK:_
 * [OS X and Windows Instructions](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-c-and-net)
 * _Clone this repo to a local directory_
-* _Visit the [ExchangeRate-API site](https://www.exchangerate-api.com/) and enter your email address to get a free API key._
-* _Create an account, check your email to activate your account, then login and find your API key on the Dashboard or under API Keys on the left sidebar_
-* _Navigate to the root of the directory of where this repo was cloned and create a .env file _
-* _Type on the first line of your .env file "API_KEY={YOUR-API-Key}" without the quotes, paste the API key you received where {YOUR-API-KEY} is, and save the document_
-* _Using Terminal on OS X or PowerShell on Windows: navigate to the directory that this repo was cloned to and 
-install all packages with command $ npm install (without the $)_
-* _Confirm all files in the src folder have 0 errors by running command $ npm run lint_
-* _Confirm all business logic tests pass with Jest by running command $ npm run test_
-* _Build the project using webpack with command $ npm run build_
-* _Start a development server which will open a locally hosted live version of this Currency Exchange with $ npm run start_
+* _Using Terminal on OS X or PowerShell on Windows navigate to the top directory that this repo was cloned to (YourPath/PierresBakery.Solution):_ 
+* _Confirm all business logic tests pass with MSTest by running commands (not including the dollar symbol): _
+* _$ dotnet restore ./PierresBakery.Tests_
+* _$ dotnet test ./PierresBakery.Tests_
+* _Then run the program with command :_
+* _$ dotnet run --project PierresBakery_
 
 ## Known Bugs
 
@@ -59,4 +55,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Copyright (c) _11-18-22_ _Richard Cha_
+Copyright (c) _12-09-22_ _Richard Cha_
