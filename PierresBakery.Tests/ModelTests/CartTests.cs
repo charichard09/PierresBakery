@@ -17,13 +17,10 @@ namespace PierresBakery.ModelTests
     [TestMethod]
     public void AddItem_WillTakeBreadAndStore_Bread()
     {
-      // Arrange
       Bread testBread = new Bread(6);
 
-      // Act
       Cart.AddItem(testBread);
 
-      // Assert
       foreach (StoreItem item in Cart.GetCurrentCart())
       {
         Assert.AreEqual(typeof(Bread), item.GetType());
@@ -36,10 +33,8 @@ namespace PierresBakery.ModelTests
       // Arrange
       Pastry testPastry = new Pastry(6);
 
-      // Act
       Cart.AddItem(testPastry);
 
-      // Assert
       foreach (StoreItem item in Cart.GetCurrentCart())
       {
         Assert.AreEqual(typeof(Pastry), item.GetType());

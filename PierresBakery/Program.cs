@@ -8,7 +8,6 @@ namespace PierresBakery
   {
     public static void Main()
     {
-      // UI code here
       Console.WriteLine("\n-------------------------------------------------------------------------------------------------------------");
       Console.WriteLine("| Welcome to Pierre's Bakery");
       Console.WriteLine("| Here are Today's prices");
@@ -17,7 +16,6 @@ namespace PierresBakery
       Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
 
       string addAnother = "yes";
-
       while (addAnother == "yes" || addAnother == "y")
       {
         Console.Write("Would you like to add to cart Bread or Pastry today: ");

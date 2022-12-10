@@ -2,10 +2,7 @@ namespace PierresBakery.Models
 {
   public class Pastry : StoreItem
   {
-    public Pastry(int quantInput) : base(quantInput)
-    {
-
-    }
+    public Pastry(int quantInput) : base(quantInput) {}
 
     public override int setCost(int quantNum)
     {
