@@ -21,7 +21,7 @@ _If the user is done adding items to the cart, the program will display their ca
 * [OS X and Windows Instructions](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-c-and-net)
 * _Clone this repo to a local directory_
 * _Using Terminal on OS X or PowerShell on Windows navigate to the top directory that this repo was cloned to (YourPath/PierresBakery.Solution):_ 
-* _Confirm all business logic tests pass with MSTest by running commands (not including the dollar symbol): _
+* _Confirm all business logic tests pass with MSTest by running commands (not including the dollar symbol):_
 * _$ dotnet restore ./PierresBakery.Tests_
 * _$ dotnet test ./PierresBakery.Tests_
 * _Then run the program with command :_
